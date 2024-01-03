@@ -2,4 +2,4 @@
 on:
   push:
     paths:
-      - 'path/to/your/script.sql'
+      - 'TABLE_ONE.sql'
