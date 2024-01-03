@@ -6,7 +6,7 @@ on:
       - 'TABLE_ONE.sql'
 
 env:
-  SNOWSQL_PWD: ${{ secrets.SNOWFLAKE_PASS }}
+  SNOWSQL_PWD: Sfeguis73!
 
 jobs:
   deploy:
