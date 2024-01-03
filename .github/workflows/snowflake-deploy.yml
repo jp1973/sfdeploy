@@ -5,6 +5,9 @@ on:
     paths:
       - 'TABLE_ONE.sql'
 
+env:
+  SNOWSQL_PWD: ${{ secrets.SNOWFLAKE_PASS }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
