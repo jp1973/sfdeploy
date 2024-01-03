@@ -20,4 +20,4 @@ jobs:
       
 
     - name: Run Snowflake Script
-      run: ~/bin/snowsql -a xjaarky-ex02796.snowflakecomputing.com -u ${{ secrets.SNOWFLAKE_USER }} -p ${{ secrets.SNOWFLAKE_PASS }} -d TEST_ONE -f TABLE_ONE.sql
+      run: ~/bin/snowsql -a xjaarky-ex02796.snowflakecomputing.com -u jpadmin -p Sfeguis73! -d TEST_ONE -f TABLE_ONE.sql
