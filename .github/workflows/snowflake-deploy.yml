@@ -23,4 +23,4 @@ jobs:
       
 
     - name: Run Snowflake Script
-      run: ~/bin/snowsql -a xjaarky-ex02796.snowflakecomputing.com -u jpadmin -d TEST_ONE -f TABLE_ONE.sql
+      run: ~/bin/snowsql -a xjaarky-ex02796 -u jpadmin -d TEST_ONE -f TABLE_ONE.sql
