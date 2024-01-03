@@ -13,20 +13,7 @@ jobs:
     - name: Check out repository
       uses: actions/checkout@v2
 
-    - name: Install SnowSQL
-      run: |
-        # Add Snowflake's public GPG key
-        curl -O https://sfc-repo.snowflakecomputing.com/rsa_key.pub
-        sudo apt-key add rsa_key.pub
 
-        # Add Snowflake's repository to the list of known repositories
-        echo "deb https://sfc-repo.snowflakecomputing.com/ubuntu/20.04/ stable main" | sudo tee /etc/apt/sources.list.d/snowflake.list
-
-        # Update package list
-        sudo apt-get update
-
-        # Install SnowSQL
-        sudo apt-get install -y snowsql
 
 
     - name: Run Snowflake Script
