@@ -27,7 +27,7 @@ jobs:
 
     - name: Run Snowflake Script
       run: |
-        for script in sql_scripts/*.sql; do
+        for script in DWH/*.sql; do
           ~/bin/snowsql -f "$script"
         done
 
