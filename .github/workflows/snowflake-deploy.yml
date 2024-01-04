@@ -3,10 +3,13 @@ name: Snowflake Deploy
 on:
   push:
     paths:
-      - 'TABLE_ONE.sql'
+      - 'DWH/*.sql'
 
 env:
   SNOWSQL_PWD: ${{ secrets.SNOWFLAKE_PASS }}
+  SNOWSQL_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+  SNOWSQL_USER: ${{ secrets.SNOWFLAKE_USER }}
+  SNOWSQL_DATABASE: ${{ secrets.SNOWFLAKE_DB }}
 
 jobs:
   deploy:
@@ -23,4 +26,8 @@ jobs:
       
 
     - name: Run Snowflake Script
-      run: ~/bin/snowsql -a xjaarky-ex02796 -u jpadmin -d TEST_ONE -f TABLE_ONE.sql
+      run: |
+        for script in sql_scripts/*.sql; do
+          ~/bin/snowsql -f "$script"
+        done
+
