@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'DWH/*.sql'
+      - 'jgraph/*.sql'
 
 env:
   SNOWSQL_PWD: ${{ secrets.SNOWFLAKE_PASS }}
@@ -27,7 +28,7 @@ jobs:
 
     - name: Run Snowflake Script
       run: |
-        for script in DWH/*.sql; do
+        for script in DWH/*.sql jgraph/*.sql; do
           ~/bin/snowsql -f "$script"
         done
 
